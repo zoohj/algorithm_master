@@ -3,13 +3,15 @@
 # 알고리즘: 이분 탐색
 
 import sys
+
 input = sys.stdin.readline
 
-#n: 나무의 수 m: 목표 나무 길이
+# n: 나무의 수 m: 목표 나무 길이
 n, m = map(int, input().split())
 trees = list(map(int, input().split()))
 
-def cal_cut(mid)->int:
+
+def cal_cut(mid) -> int:
     # 자른 나무 계산
     global trees
     total = 0
@@ -18,17 +20,18 @@ def cal_cut(mid)->int:
             total += tree - mid
     return total
 
+
 def binary_search(target, start, end):
     global cutter_height
-    if start>end:
+    if start > end:
         return None
-    mid = (start+end)//2
+    mid = (start + end) // 2
     cal = cal_cut(mid)
     if cal < target:
-        binary_search(target, start, mid-1)
+        binary_search(target, start, mid - 1)
     if cal >= target:
         cutter_height = mid
-        binary_search(target, mid+1, end)
+        binary_search(target, mid + 1, end)
 
 
 low = 0
