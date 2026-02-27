@@ -30,3 +30,56 @@ for i in range(4,n+1):
         dp[i] = min(dp[i],dp[i//2]+1)
 
 print(dp[n])
+
+# 3으로 나누기
+# 2로 나누기
+# 1 빼기
+
+# count = 0
+# n=o_n2
+
+# while n != 1:
+#     if n % 3 == 0:
+#         count +=1
+#         n = n//3
+#     elif n % 2 == 0:
+#         count +=1
+#         n = n//2
+#     else:
+#         count +=1
+#         n -= 1
+
+# b_n= o_n-1
+# before_count=0
+# while b_n != 1:
+#     if b_n % 3 == 0:
+#         before_count +=1
+#         b_n = b_n//3
+#     elif b_n % 2 == 0:
+#         before_count +=1
+#         b_n = b_n//2
+#     else:
+#         before_count +=1
+#         b_n -= 1
+
+
+# print(max(before_count+1, count))
+
+
+
+'''
+X가 3으로 나누어 떨어지면, 3으로 나눈다.
+X가 2로 나누어 떨어지면, 2로 나눈다.
+1을 뺀다.
+
+연산을 사용하는 횟수의 최솟값
+
+그냥 다해보고 최소값을 해야하나..??
+dp 써야하나..?
+
+1. 3으로 나눠떨어지면 나눠
+2. 2로 나눠떨어지면 나눠
+
+vs
+dp[i-1]값 +1이랑 비교..?
+'''
